@@ -4,20 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agenda de Filmes</title>
-
-  <!-- Ligação correta com o CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Agenda de Filmes</h1>
-  
-  <input type="date" id="movie-date" />
-  <input type="text" id="movie-title" placeholder="Nome do Filme" />
-  <button id="add-movie">Adicionar Filme</button>
-  
-  <div id="movie-list"></div>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button id="prevMonth">&#8592;</button>
+      <h2 id="monthName"></h2>
+      <button id="nextMonth">&#8594;</button>
+    </div>
 
-  <!-- Ligação correta com o JS -->
+    <div class="weekdays" id="weekdays"></div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup hidden" id="moviePopup">
+    <div class="popup-content">
+      <h3>Escolha um filme</h3>
+      <input type="text" id="movieTitleInput" placeholder="Buscar no OMDb" />
+      <button id="searchMovieBtn">Buscar</button>
+
+      <div id="omdbResult" class="hidden">
+        <img id="omdbPoster" src="" alt="Poster" style="width:100%; margin-top:10px;">
+        <button id="useOmdbPosterBtn">Usar este poster</button>
+      </div>
+
+      <hr>
+      <label>Upload manual:</label>
+      <input type="file" id="manualImageInput" accept="image/*">
+
+      <button class="remove-btn" id="removePosterBtn">Remover poster</button>
+      <button id="cancelBtn">Cancelar</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
