@@ -1,38 +1,61 @@
-<div class="calendar-container">
-  <div class="calendar-header">
-    <button id="prevMonth">◀</button>
-    <h2 id="monthName"></h2>
-    <button id="nextMonth">▶</button>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Filmes</title>
 
-  <div class="weekdays" id="weekdays"></div>
+  <!-- Conexão com o CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <div class="calendar-grid" id="calendarGrid"></div>
-</div>
-
-<!-- Pop-up -->
-<div id="moviePopup" class="popup hidden">
-  <div class="popup-content">
-    <h3>Adicionar Filme</h3>
-
-    <label>Nome do filme:</label>
-    <input type="text" id="movieTitleInput" placeholder="Digite o nome do filme">
-
-    <button id="searchMovieBtn">Buscar no OMDb</button>
-
-    <div id="omdbResult" class="hidden">
-      <p><strong>Resultado:</strong></p>
-      <img id="omdbPoster" width="160">
-      <button id="useOmdbPosterBtn">Usar este pôster</button>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button id="prev-month">◀</button>
+      <h2 id="month-year"></h2>
+      <button id="next-month">▶</button>
     </div>
 
-    <label>Ou envie uma imagem manualmente:</label>
-    <input type="file" id="manualImageInput" accept="image/*">
+    <div class="calendar-grid">
+      <div class="day-name">Domingo</div>
+      <div class="day-name">Segunda</div>
+      <div class="day-name">Terça</div>
+      <div class="day-name">Quarta</div>
+      <div class="day-name">Quinta</div>
+      <div class="day-name">Sexta</div>
+      <div class="day-name">Sábado</div>
+    </div>
 
-    <button id="removePosterBtn" class="remove-btn">Remover pôster deste dia</button>
+    <div id="calendar-days" class="calendar-grid"></div>
+  </div>
 
-    <div class="popup-buttons">
-      <button id="cancelBtn">Cancelar</button>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>Escolher Filme</h3>
+
+      <input type="text" id="movie-search" placeholder="Digite o nome do filme...">
+
+      <button id="search-button">Buscar no OMDB</button>
+
+      <p id="search-status"></p>
+
+      <div id="movie-results"></div>
+
+      <div class="upload-area">
+        <p>Ou envie uma imagem manualmente:</p>
+        <input type="file" id="manual-image" accept="image/*">
+        <button id="apply-manual">Usar imagem enviada</button>
+      </div>
+
+      <button id="remove-image" class="remove-btn">Remover imagem do dia</button>
+
+      <button id="close-modal" class="close-btn">Fechar</button>
     </div>
   </div>
-</div>
+
+  <!-- Conexão com o JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
