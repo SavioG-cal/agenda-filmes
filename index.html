@@ -1,0 +1,38 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button id="prevMonth">◀</button>
+    <h2 id="monthName"></h2>
+    <button id="nextMonth">▶</button>
+  </div>
+
+  <div class="weekdays" id="weekdays"></div>
+
+  <div class="calendar-grid" id="calendarGrid"></div>
+</div>
+
+<!-- Pop-up -->
+<div id="moviePopup" class="popup hidden">
+  <div class="popup-content">
+    <h3>Adicionar Filme</h3>
+
+    <label>Nome do filme:</label>
+    <input type="text" id="movieTitleInput" placeholder="Digite o nome do filme">
+
+    <button id="searchMovieBtn">Buscar no OMDb</button>
+
+    <div id="omdbResult" class="hidden">
+      <p><strong>Resultado:</strong></p>
+      <img id="omdbPoster" width="160">
+      <button id="useOmdbPosterBtn">Usar este pôster</button>
+    </div>
+
+    <label>Ou envie uma imagem manualmente:</label>
+    <input type="file" id="manualImageInput" accept="image/*">
+
+    <button id="removePosterBtn" class="remove-btn">Remover pôster deste dia</button>
+
+    <div class="popup-buttons">
+      <button id="cancelBtn">Cancelar</button>
+    </div>
+  </div>
+</div>
